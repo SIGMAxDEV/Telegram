@@ -17,7 +17,7 @@ def bot():
 
             reply = "I’m alive on Vercel 🚀"
             if text == "/start":
-                reply = "Hello Ayu! This bot is running on Vercel 🚀"
+                reply = "Hello 🔑! This bot is running on Vercel 🚀"
 
             requests.post(URL, json={"chat_id": chat_id, "text": reply})
 
