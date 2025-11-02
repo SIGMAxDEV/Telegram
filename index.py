@@ -11,12 +11,12 @@ if not TOKEN:
 URL = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
 
 
-@app.route("/api/bot", methods=["GET"])
+@app.route("/api", methods=["GET"])
 def home():
     return jsonify({"status": "Bot running successfully 🚀"}), 200
 
 
-@app.route("/api/bot", methods=["POST"])
+@app.route("/api", methods=["POST"])
 def webhook():
     data = request.get_json()
     if "message" in data:
@@ -24,7 +24,7 @@ def webhook():
         text = data["message"].get("text", "")
 
         if text == "/start":
-            reply = "Hello Ayu! This bot is running on Vercel 🚀"
+            reply = "Hello 🔑! This bot is running on Vercel 🚀"
         else:
             reply = "I’m alive on Vercel ⚡"
 
